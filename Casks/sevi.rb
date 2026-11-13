@@ -13,6 +13,15 @@ cask "sevi" do
   app "Sevi.app"
   binary "#{appdir}/Sevi.app/Contents/MacOS/sevi"
 
+  # An upgrade does not run the uninstall step, so a helper that is listening
+  # would keep running the previous version. Stopping it here lets the next
+  # terminal start the new one. On a first install nothing is listening.
+  postflight_steps do
+    run "Sevi.app/Contents/MacOS/sevi",
+        args: ["stop"],
+        base: :appdir
+  end
+
   uninstall signal: ["TERM", "com.nerttiyana.sevi"]
 
   zap script: {

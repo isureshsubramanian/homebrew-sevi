@@ -1,6 +1,6 @@
 cask "sevi" do
-  version "0.1.1"
-  sha256 "eda4f5d032867f237c2e7d176df3a311a013d4a6333150f5a5b665053d35933a"
+  version "0.1.2"
+  sha256 "02fe0ceb726989a7299cdbb9ce345cc85dbcc736f3e982752128a6b9b0d20149"
 
   url "https://github.com/isureshsubramanian/Sevi/releases/download/v#{version}/Sevi-#{version}.zip"
   name "Sevi"
